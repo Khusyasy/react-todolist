@@ -119,10 +119,6 @@ html {
 	text-shadow: 1px 1px 2px var(--black-color);
 }
 
-.header-btn:active {
-	text-shadow: 1px 1px 2px var(--black-color);
-}
-
 .todos {
 	display: flex;
 	flex-direction: column;
