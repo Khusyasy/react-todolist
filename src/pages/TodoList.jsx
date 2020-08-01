@@ -25,9 +25,13 @@ const TodoList = () => {
 	const showAddToggle = () => setShowAdd(!showAdd);
 
 	const addTodo = value => {
-		const addedTodos = [...todos, { text: value, isCompleted: false }];
+		if (todos.length < 10) {
+			const addedTodos = [...todos, { text: value, isCompleted: false }];
 
-		setTodos(addedTodos);
+			setTodos(addedTodos);
+		} else {
+			alert("no more than 10 todos allowed");
+		}
 	};
 
 	return (
