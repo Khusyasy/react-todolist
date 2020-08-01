@@ -7,29 +7,36 @@ import Todos from "../components/Todos.jsx";
 
 const TodoList = () => {
 	const [todos, setTodos] = useState([
-		{ text: "react" },
-		{ text: "belajar" },
-		{ text: "di" },
-		{ text: "wegodev" }
+		{ text: "react", isCompleted: false },
+		{ text: "belajar", isCompleted: false },
+		{ text: "di", isCompleted: false },
+		{ text: "wegodev", isCompleted: false }
 	]);
 
 	const [showAdd, setShowAdd] = useState(false);
 
-	const showAddToggle = () => setShowAdd(!showAdd);
-
-	const addTodo = value => {
-		const addedTodos = [...todos, { text: value }];
+	const completeTodo = index => {
+		const addedTodos = [...todos];
+		addedTodos[index].isCompleted = !addedTodos[index].isCompleted;
 
 		setTodos(addedTodos);
 	};
-	console.log("showAdd", showAdd);
+
+	const showAddToggle = () => setShowAdd(!showAdd);
+
+	const addTodo = value => {
+		const addedTodos = [...todos, { text: value, isCompleted: false }];
+
+		setTodos(addedTodos);
+	};
+
 	return (
 		<Paper>
 			<Header showAddToggle={showAddToggle} showAdd={showAdd} />
 
 			<TodoForm addTodo={addTodo} showAdd={showAdd} />
 
-			<Todos todos={todos} />
+			<Todos todos={todos} completeTodo={completeTodo} />
 		</Paper>
 	);
 };
