@@ -6,12 +6,7 @@ import TodoForm from "../components/TodoForm.jsx";
 import Todos from "../components/Todos.jsx";
 
 const TodoList = () => {
-	const [todos, setTodos] = useState([
-		{ text: "react", isCompleted: false },
-		{ text: "belajar", isCompleted: false },
-		{ text: "di", isCompleted: false },
-		{ text: "wegodev", isCompleted: false }
-	]);
+	const [todos, setTodos] = useState([]);
 
 	const [showAdd, setShowAdd] = useState(false);
 
@@ -21,6 +16,8 @@ const TodoList = () => {
 
 		setTodos(addedTodos);
 	};
+
+	const clearTodos = () => setTodos([]);
 
 	const showAddToggle = () => setShowAdd(!showAdd);
 
@@ -36,7 +33,11 @@ const TodoList = () => {
 
 	return (
 		<Paper>
-			<Header showAddToggle={showAddToggle} showAdd={showAdd} />
+			<Header
+				showAddToggle={showAddToggle}
+				showAdd={showAdd}
+				clearTodos={clearTodos}
+			/>
 
 			<TodoForm addTodo={addTodo} showAdd={showAdd} />
 

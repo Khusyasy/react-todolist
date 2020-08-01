@@ -151,3 +151,15 @@ html {
 	left: 50%;
 	transform: translate(-50%);
 }
+
+.todo-placeholder-text {
+	font-family: "Homemade Apple", cursive;
+	font-size: 2.4rem;
+	text-align: center;
+	padding: 1.6rem;
+}
+
+.add-button-placeholder-text {
+	font-size: 2.4rem;
+	font-family: "Bungee", cursive;
+}
