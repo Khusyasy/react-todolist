@@ -32,6 +32,10 @@ html {
 	color: var(--red-color);
 }
 
+.black-color {
+	color: var(--black-color);
+}
+
 .container {
 	width: 600px;
 	height: 800px;
@@ -56,7 +60,8 @@ html {
 }
 
 .header-title {
-	flex: 1;
+	/* flex: 1; */
+	width: 52%;
 
 	text-align: center;
 
@@ -67,6 +72,8 @@ html {
 }
 
 .header-btn {
+	width: 24%;
+
 	font-size: 1.8rem;
 	font-family: "Bungee", cursive;
 
