@@ -8,6 +8,10 @@ const TodoForm = ({ addTodo, showAdd }) => {
 		e.preventDefault();
 
 		if (!value) return;
+		if (value.length > 40) {
+			alert("please enter a shorter todo");
+			return;
+		}
 
 		addTodo(value);
 		setValue("");
@@ -34,7 +38,7 @@ const TodoForm = ({ addTodo, showAdd }) => {
 
 TodoForm.propTypes = {
 	addTodo: PropTypes.func.isRequired,
-	showAdd: PropTypes.bool
+	showAdd: PropTypes.bool.isRequired
 };
 
 export default TodoForm;
